@@ -2,7 +2,6 @@
 'use strict';
 
 angular.module('ShoppingListCheckOff', [])
-
 .controller('ToBuyController', ToBuyController )
 .controller('AlreadyBoughtController', AlreadyBoughtController )
 .service('ShoppingListCheckOffService',ShoppingListCheckOffService);
@@ -26,7 +25,7 @@ function AlreadyBoughtController(service) {
 
 function ShoppingListCheckOffService() {
   var service=this;
-  var toBuyItems;
+  var toBuyItems = [];
   var boughtItems = [];
 
   service.setToBuyItems = function(items) {
