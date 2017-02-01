@@ -1,0 +1,40 @@
+<div ng-if="ctrl.listItems.length>0">
+  <div class="row myHeader" >
+  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+    Short Name
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+     Name
+  </div>
+  <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+     Description
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+  Price
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+
+  </div>
+  </div>
+  <div ng-repeat="item in ctrl.listItems" class="row myRow">
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+         {{ item.short_name }}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+         {{ item.name }}
+      </div>
+      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+         {{ item.description }}
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <span ng-if="item.price_small!=null">{{ item.price_small | currency : '$' : 2 }}</span> <span ng-if="item.small_portion_name!=null"> ({{item.small_portion_name}})/</span>
+        <span ng-if="item.price_large!=null">{{ item.price_large | currency : '$' : 2}}</span> <span ng-if="item.large_portion_name!=null"> ({{item.large_portion_name}}) </span>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <button ng-click="ctrl.onRemove({index: $index});" class="btn btn-primary">Don't want this one!</button>
+      </div>
+  </div>
+</div>
+<div ng-if="ctrl.listItems.length==0" class="empty">
+  Nothing found
+</div>
