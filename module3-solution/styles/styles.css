@@ -59,6 +59,17 @@ input[type="text"] {
 .myRow {
   margin-bottom: 5px;
 }
+
+.myRow:nth-child(odd) {
+  background-color: #ffffff;
+}
+.myRow:nth-child(even) {
+  background-color: #d0d0ff;
+}
+.no-pad-right {
+  padding-right: 0px;
+align-content: center;
+}
 .myHeader {
   font-weight: bold;
 }

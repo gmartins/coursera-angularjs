@@ -21,7 +21,7 @@ function MenuSearchService($http,menuBaseUrl) {
       var foundItems = [];
 
       if (searchTerm===undefined||searchTerm=='') {
-        return [];
+        return foundItems;
       }
 
       for (var i=0;i<items.length;i++) {

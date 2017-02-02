@@ -30,8 +30,8 @@
         <span ng-if="item.price_small!=null">{{ item.price_small | currency : '$' : 2 }}</span> <span ng-if="item.small_portion_name!=null"> ({{item.small_portion_name}})/</span>
         <span ng-if="item.price_large!=null">{{ item.price_large | currency : '$' : 2}}</span> <span ng-if="item.large_portion_name!=null"> ({{item.large_portion_name}}) </span>
       </div>
-      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-        <button ng-click="ctrl.onRemove({index: $index});" class="btn btn-primary">Don't want this one!</button>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 no-pad-right">
+        <button ng-click="ctrl.onRemove({index: $index});" class="btn btn-primary pull-right">Don't want this one!</button>
       </div>
   </div>
 </div>
