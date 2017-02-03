@@ -1,7 +1,18 @@
+body {
+  font-size: 16px;
+  font-family: 'Oxygen', sans-serif;
+}
+
 li[ui-sref]:hover {
   display: inline-block;
   cursor: pointer;
   border: solid black 1px;
   padding-left: 5px;
   padding-right: 5px;
+  background: #88aaff;
+}
+
+.category {
+    background: #88aaff;
+    font-weight: bold;
 }
