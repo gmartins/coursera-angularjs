@@ -1,0 +1,58 @@
+<form name="signupForm" novalidate>
+  <h3>Please enter your information to receive our newsletter</h3>
+  <div>
+    <span>First name:</span>
+    <input type="text" name="firstName" required ng-model="signupCtrl.user.firstName" placeholder="First Name">
+    <span ng-if="signupForm.firstName.$invalid && signupForm.firstName.$touched">
+      First name is a required field
+    </span>
+  </div >
+  <div>
+    <span>Last name:</span>
+    <input type="text" name="lastName" required ng-model="signupCtrl.user.lastName" placeholder="Last Name"/>
+    <span ng-if="signupForm.lastName.$invalid && signupForm.lastName.$touched">
+      Last name is a required field
+    </span>
+  </div>
+  <div>
+    <span>Email:</span>
+    <input type="email" name="email" required ng-model="signupCtrl.user.email" placeholder="Email"/>
+    <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+      Must be a valid email address: handle@domain format
+    </span>
+  </div>
+  <div>
+    <span>Phone number:</span>
+    <input type="text" name="phone" ng-model="signupCtrl.user.phone" placeholder="Phone number" required pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+        Phone must be in the format ###-###-####.
+      </span>
+  </div>
+  <div>
+    <span>Favorite menu:</span>
+    <input type="text" name="favorite" ng-model="signupCtrl.user.favorite" placeholder="menu short name"/>
+    <!-- <span ng-if="signupForm.favorite.$error.required && signupForm.favorite.$touched">
+      Menu short name is required
+    </span>
+    <span ng-if="signupForm.favorite.$error.maxlength && signupForm.favorite.$touched">
+      Menu short name must not be longer than 2 characters
+    </span> -->
+    <span ng-if="signupCtrl.fav_error">
+        No such menu number exists
+    </span>
+  </div>
+  <button
+    ng-disabled="signupForm.$invalid"
+    ng-click="signupCtrl.submit()">Submit</button>
+    <!--
+    <div style="margin-top: 10px;">
+      Form valid? {{ signupForm.$valid }}
+    </div>
+  -->
+</form>
+<div id="saved_message">
+  <span ng-if="signupCtrl.show_saved" >
+      Your information has been saved
+  </span>
+
+</div>

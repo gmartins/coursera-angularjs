@@ -1,0 +1,41 @@
+<div ng-if="myinfoCtrl.user">
+  <div>
+    <span>First name:</span>
+    <span>
+    {{myinfoCtrl.user.firstName}}
+    </span>
+  </div >
+  <div>
+    <span>Last name:</span>
+    <span>
+    {{myinfoCtrl.user.lastName}}
+    </span>
+  </div>
+  <div>
+    <span>Email:</span>
+    <span>
+      {{myinfoCtrl.user.email}}
+    </span>
+  </div>
+  <div>
+    <span>Phone number:</span>
+    <span>
+      {{myinfoCtrl.user.phone}}
+    </span>
+  </div>
+  <div>
+    <span>Favorite menu:</span>
+    <span>
+    {{myinfoCtrl.user.favorite}}
+    </span>
+  </div>
+  <div id="menu-item-info">
+    <menu-item menu-item="myinfoCtrl.menuItem" >
+    </menu-item>
+  </div>
+</div>
+<div>
+  <span ng-if="myinfoCtrl.user===undefined" >
+      Not Signed Up Yet. <a ui-sref="public.signup"> Sign up Now! </a>
+  </span>
+</div>
